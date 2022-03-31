@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod --reference=_hello vincent:staff
+sudo chmod -h vincent:staff _hello
