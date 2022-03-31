@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f -exec chmod -R ugo+rx {} \
+find ./ -type d -exec chmod -R ugo+rx {} \;
