@@ -1,2 +1,3 @@
-0 search/16 School File containing "School"
-!:mime text/plain
+#!/bin/bash
+0 string SCHOOL School data
+!:mime School
