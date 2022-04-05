@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "One line, one word" | tr ',' '\n' | sort -u | tr '\n' '\n,'
+ tr ',' '\n' | sort -u | tr '\n' '\n,'
