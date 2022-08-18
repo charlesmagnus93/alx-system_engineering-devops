@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# message to disply
+msg="Holberton School"
+# while loop
+counter=0
+while [ $counter -lt 10 ]; do echo "$msg"; (( counter+=1 )); done
