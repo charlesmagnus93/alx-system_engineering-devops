@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# displays
+list=$(ls -1)
+for l in $list; do
+	echo "$l" | cut -d "-" -f2-
+done
