@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# message to display
+msg="Best School"
+# for loop
+for i in {1..10}; do echo "$msg"; done
