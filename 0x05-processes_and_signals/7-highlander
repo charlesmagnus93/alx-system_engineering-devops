@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# displays 
+trap func SIGTERM
+function func() {
+	echo "I am invincible!!!"
+}
+while :
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
