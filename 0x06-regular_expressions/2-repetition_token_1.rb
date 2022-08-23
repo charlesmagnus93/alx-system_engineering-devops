@@ -1,2 +1,2 @@
-#!/urs/bin/env ruby
+#!/usr/bin/env ruby
 /hb?tn/
