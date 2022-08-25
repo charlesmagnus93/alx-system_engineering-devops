@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# command to show program open port, PID and name
+netstat -lp
