@@ -2,5 +2,6 @@
 # install Nginx
 apt-get -y update
 apt-get -y install nginx
+sed -i  "s/8080/80/g" /etc/nginx/sites-enabled/default
 echo Holberton School > /var/www/html/index.nginx-debian.html
 service nginx start
