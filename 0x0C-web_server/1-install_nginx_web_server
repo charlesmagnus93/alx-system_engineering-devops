@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # install Nginx
-apt-get -y update
-apt-get -y install nginx
+sudo apt -y update
+sudo apt -y install nginx
 sed -i  "s/8080/80/g" /etc/nginx/sites-enabled/default
 ufw allow 'Nginx HTTP'
 echo Hello World! > /var/www/html/index.html
