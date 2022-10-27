@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Load balancer
+sudo apt update
+sudo apt install -y haproxy=2.0.\*
+
+cat <<EOT | sudo tee -a /etc/haproxy/haproxy.cfg
+frontend haproxy-main
+        bind *:80
+        option forwardfor
+        default_backend web-backend
+backend web-backend
+        balance roundrobin
+        server web-01 52.3.245.71:80 check
+        server web-02 54.175.98.56:80 check
+EOT
+sudo service haproxy restart
