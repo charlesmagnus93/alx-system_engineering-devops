@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# nginx startup fix
+sudo service nginx stop 
+sudo cp /usr/share/nginx/html/index.html /var/www/html/index.html
+sudo service apache2 restart
