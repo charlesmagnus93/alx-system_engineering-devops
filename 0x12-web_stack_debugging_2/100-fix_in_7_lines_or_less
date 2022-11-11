@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # run nginx under nginx user on all IPs on port 8080
-chown nginx:nginx /etc/nginx/nginx.conf
-chown nginx:nginx /etc/nginx/sites-available/default
+chown nginx:nginx /etc/nginx/nginx.conf /etc/nginx/sites-available/default
+chmod u+rwx /etc/nginx/nginx.conf
 sed -i "s/#user www-data/user nginx/" /etc/nginx/nginx.conf
 sed -i "s/80/8080/" /etc/nginx/sites-available/default
 sudo nginx service nginx restart
