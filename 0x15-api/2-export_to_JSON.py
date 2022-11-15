@@ -48,6 +48,6 @@ if __name__ == '__main__':
             "task": todo['title'],
             "completed": todo['completed'],
             "username": user['username']})
-    
+
     with open(file, 'a+') as the_file:
         json.dump(jsonData, the_file)
