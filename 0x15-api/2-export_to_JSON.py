@@ -2,9 +2,9 @@
 """
 Export given user todos into JSON
 """
+import json
 import requests
 import sys
-import json
 
 
 def getUser(id):
@@ -43,7 +43,6 @@ if __name__ == '__main__':
 
     jsonData = {}
     jsonData[userID] = []
-
     for todo in todos:
         jsonData[userID].append({
             "task": todo['title'],
