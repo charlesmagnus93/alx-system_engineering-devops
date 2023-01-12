@@ -26,7 +26,7 @@ def recurse(subreddit, hot_list=[], next_page=None, count=0):
     for child in children:
         title = child.get("data").get("title")
         hot_list.append(title)
-    if next_page is None:
-        return hot_list
-    return recurse(subreddit, hot_list, next_page, count)
+    if next_page is not None:
+        return recurse(subreddit, hot_list, next_page, count)
+    return hot_list
 
