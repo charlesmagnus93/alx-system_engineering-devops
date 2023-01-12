@@ -13,7 +13,7 @@ def recurse(subreddit, hot_list=[], next_page=None, count=0):
       "User-Agent": "API advanced"
     }
     url = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
-    params = {"limit": 10, "next_page": next_page, "count": count}
+    params = {"limit": 50, "next_page": next_page, "count": count}
     res = requests.get(
         url, headers=headers, params=params, allow_redirects=False
     )
