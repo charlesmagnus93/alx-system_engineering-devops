@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Get given user ID TODOS
+Export given user todos into CSV
 """
 import requests
 import sys
@@ -37,12 +37,14 @@ if __name__ == '__main__':
         sys.exit(0)
 
     todos = getTodos(userID)
-    taksCompleted = [todo for todo in todos if todo['completed']]
 
-    print('Employee {} is done with tasks({}/{}):'.format(
-        user['name'],
-        len(taksCompleted),
-        len(todos)))
+    file = '{}.csv'.format(userID)
 
-    for todo in taksCompleted:
-        print('\t ' + todo['title'])
+    with open(file, 'a+') as the_file:
+        line = '"{}","{}","{}","{}"\n'
+        for todo in todos:
+            the_file.write(line.format(
+                userID,
+                user['username'],
+                todo['completed'],
+                todo['title']))

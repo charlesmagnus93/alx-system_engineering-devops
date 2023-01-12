@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
-Get given user ID TODOS
+Export given user todos into JSON
 """
+import json
 import requests
 import sys
 
@@ -37,12 +38,16 @@ if __name__ == '__main__':
         sys.exit(0)
 
     todos = getTodos(userID)
-    taksCompleted = [todo for todo in todos if todo['completed']]
 
-    print('Employee {} is done with tasks({}/{}):'.format(
-        user['name'],
-        len(taksCompleted),
-        len(todos)))
+    file = '{}.json'.format(userID)
 
-    for todo in taksCompleted:
-        print('\t ' + todo['title'])
+    jsonData = {}
+    jsonData[userID] = []
+    for todo in todos:
+        jsonData[userID].append({
+            "task": todo['title'],
+            "completed": todo['completed'],
+            "username": user['username']})
+
+    with open(file, 'a+') as the_file:
+        json.dump(jsonData, the_file)
