@@ -20,8 +20,8 @@ def recurse(subreddit, hot_list=[], next_page=None, count=0):
     if res.status_code != 200:
         return None
     result = res.json().get("data")
-    next_page = res.get("next_page")
-    count += res.get('dist')
+    next_page = result.get("next_page")
+    count += result.get('dist')
     children = result.get("children")
     for child in children:
         title = child.get("data").get("title")
