@@ -22,7 +22,7 @@ def recurse(subreddit, hot_list=[], next_page=None, count=0):
     result = res.json().get("data")
     next_page = res.get("next_page")
     count += res.get('dist')
-    children = result.gt("children")
+    children = result.get("children")
     for child in children:
         title = child.get("data").get("title")
         hot_list.append(title)
